@@ -7,6 +7,7 @@
     <body>
         <div id="shopping-list">
             <h1>{{ header.toLocaleUpperCase() }}</h1>
+            <input v-model="newMovie" placeholder="Add new movies here!" type="text">
             <ul>
                 <li v-for="movie in movies">{{movie}}</li>
             </ul>
@@ -17,6 +18,7 @@
                 el: '#shopping-list',
                 data: {
                     header: 'My First Vue App',
+                    newMovie: '',
                     movies: [
                         'The Blues Brothers',
                         'The Matrix',
