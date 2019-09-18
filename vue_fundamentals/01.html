@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <meta>
+        <title>Shopping</title>
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <div id="shopping-list">
+            <h1>{{ header.toLocaleUpperCase() }}</h1>
+            <h2>{{ header2 ? `LOWERCASE: ${header2}` : 'No header yet. THIS IS A TERNARY' }}</h2>
+            <input type="text" v-model="header">
+            <input type="text" v-model="header2">
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script>
+            let shoppingList = new Vue({
+                el: '#shopping-list',
+                data: {
+                    header: 'Vue is ready to party',
+                    header2: null
+                }
+            });
+        </script>
+    </body>
+</html>
