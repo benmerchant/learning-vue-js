@@ -7,7 +7,8 @@
     <body>
         <div id="shopping-list">
             <h1>{{ header.toLocaleUpperCase()  }}</h1>
-            <input v-model="newMovie" placeholder="Add new movies here!" type="text">
+            <input @keyup.enter="movies.push(newMovie)" v-model="newMovie" placeholder="Add new movies here!" type="text">
+            <button v-on:click="movies.push(newMovie)">Save Item</button>
             <ul>
                 <li v-for="movie in movies">{{movie}}</li>
             </ul>
