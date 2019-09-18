@@ -7,17 +7,23 @@
     <body>
         <div id="shopping-list">
             <h1>{{ header.toLocaleUpperCase() }}</h1>
-            <h2>{{ header2 ? `LOWERCASE: ${header2}` : 'No header yet. THIS IS A TERNARY' }}</h2>
-            <input type="text" v-model="header">
-            <input type="text" v-model="header2">
+            <ul>
+                <li v-for="movie in movies">{{movie}}</li>
+            </ul>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script>
             let shoppingList = new Vue({
                 el: '#shopping-list',
                 data: {
-                    header: 'Vue is ready to party',
-                    header2: null
+                    header: 'My First Vue App',
+                    movies: [
+                        'The Blues Brothers',
+                        'The Matrix',
+                        'Kill Bill Vol. 1 & 2',
+                        'Saw',
+                        'Animal House'
+                    ] 
                 }
             });
         </script>
